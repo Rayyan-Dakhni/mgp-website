@@ -309,6 +309,8 @@
 /*** Service ***/
 .service-item img {
   transition: 0.5s;
+  height: 300px;
+  object-fit: cover;
 }
 
 .service-item:hover img {
@@ -415,10 +417,13 @@
 /*** Team ***/
 .team-item img {
   transition: 0.5s;
+  padding: 20px;
+  height: 200px;
+  width: auto;
 }
 
 .team-item:hover img {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .team-item .team-social {
