@@ -3,7 +3,7 @@
 // import "https://smtpjs.com/v3/smtp.js";
 
 emailjs.init({
-  publicKey: "qh6KJB-9llaccYp8P",
+  publicKey: "B1ysZDH9MlIYYdFZT",
 });
 
 const contactForm = document.querySelector("#query-form");
@@ -26,7 +26,7 @@ contactForm.addEventListener("submit", function (e) {
     note: note,
   };
 
-  emailjs.send("service_zzbedg4", "template_0w4zhtq", templateParams).then(
+  emailjs.send("service_5ofl591", "template_3ynybu9", templateParams).then(
     (response) => {
       console.log("SUCCESS!", response.status, response.text);
 
