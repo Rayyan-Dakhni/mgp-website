@@ -12,18 +12,18 @@ contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // getting field values
-  const name = document.querySelector("#query-name").value;
-  const email = document.querySelector("#query-email").value;
-  const phone = document.querySelector("#query-phone").value;
-  const product = document.querySelector("#query-product").value;
-  const note = document.querySelector("#query-note").value;
+  const name = document.querySelector("#query-name");
+  const email = document.querySelector("#query-email");
+  const phone = document.querySelector("#query-phone");
+  const product = document.querySelector("#query-product");
+  const note = document.querySelector("#query-note");
 
   const templateParams = {
-    name: name,
-    email: email,
-    phone: phone,
-    product: product,
-    note: note,
+    name: name.value,
+    email: email.value,
+    phone: phone.value,
+    product: product.value,
+    note: note.value,
   };
 
   emailjs.send("service_5ofl591", "template_3ynybu9", templateParams).then(
@@ -32,6 +32,12 @@ contactForm.addEventListener("submit", function (e) {
 
       contactForm.style.display = "none";
       document.querySelector("#confirmation-box").style.display = "block";
+
+      name.value = "";
+      email.value = "";
+      phone.value = "";
+      product.value = "";
+      note.value = "";
     },
     (error) => {
       console.log("FAILED...", error);
@@ -40,4 +46,11 @@ contactForm.addEventListener("submit", function (e) {
       );
     }
   );
+});
+
+const refreshForm = document.querySelector("#refresh-form");
+
+refreshForm.addEventListener("click", function (e) {
+  document.querySelector("#confirmation-box").style.display = "none";
+  contactForm.style.display = "block";
 });
